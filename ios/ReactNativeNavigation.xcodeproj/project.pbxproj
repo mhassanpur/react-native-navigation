@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21AEBC9920632EFC00D6FE9C /* OGTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21AEBC9820632EFC00D6FE9C /* OGTabBarController.m */; };
 		260804DB1CE0D9D20094DBA1 /* RCCToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 260804DA1CE0D9D20094DBA1 /* RCCToolBar.m */; };
 		261108801E6C495400BF5D98 /* UIViewController+Rotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611087F1E6C495400BF5D98 /* UIViewController+Rotation.m */; };
 		26714EAC1EB0E9D3009F4D52 /* RCCCustomTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26714EAB1EB0E9D3009F4D52 /* RCCCustomTitleView.m */; };
@@ -53,6 +54,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		21AEBC9720632EFC00D6FE9C /* OGTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OGTabBarController.h; sourceTree = "<group>"; };
+		21AEBC9820632EFC00D6FE9C /* OGTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OGTabBarController.m; sourceTree = "<group>"; };
 		260804D91CE0D9D20094DBA1 /* RCCToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCCToolBar.h; sourceTree = "<group>"; };
 		260804DA1CE0D9D20094DBA1 /* RCCToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCCToolBar.m; sourceTree = "<group>"; };
 		2611087E1E6C495400BF5D98 /* UIViewController+Rotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Rotation.h"; path = "../UIViewController+Rotation.h"; sourceTree = "<group>"; };
@@ -225,6 +228,8 @@
 				CC84A1981C1A0C4E00B3A6A2 /* RCCNavigationController.m */,
 				CC84A1991C1A0C4E00B3A6A2 /* RCCTabBarController.h */,
 				CC84A19A1C1A0C4E00B3A6A2 /* RCCTabBarController.m */,
+				21AEBC9720632EFC00D6FE9C /* OGTabBarController.h */,
+				21AEBC9820632EFC00D6FE9C /* OGTabBarController.m */,
 				CC84A19B1C1A0C4E00B3A6A2 /* RCCViewController.h */,
 				CC84A19C1C1A0C4E00B3A6A2 /* RCCViewController.m */,
 				D84813171C8C5EB700051BAF /* RCCLightBox.h */,
@@ -337,6 +342,7 @@
 				CC84A1A11C1A0C4E00B3A6A2 /* RCCTabBarController.m in Sources */,
 				D85082E71CBCF54200FDB961 /* SidebarFlipboardAnimation.m in Sources */,
 				D85082E51CBCF54200FDB961 /* SidebarFacebookAnimation.m in Sources */,
+				21AEBC9920632EFC00D6FE9C /* OGTabBarController.m in Sources */,
 				CC84A1A21C1A0C4E00B3A6A2 /* RCCViewController.m in Sources */,
 				D85082E91CBCF54200FDB961 /* SidebarWunderlistAnimation.m in Sources */,
 				D85082E11CBCF54200FDB961 /* RCCDrawerHelper.m in Sources */,

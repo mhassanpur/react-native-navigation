@@ -32,7 +32,7 @@
                            @"selectedTabIndex": @([tabBarController.viewControllers indexOfObject:viewController]),
                            @"unselectedTabIndex": @(tabBarController.selectedIndex)
                            };
-    [RCCTabBarController sendScreenTabChangedEvent:viewController body:body];
+    [[self class] sendScreenTabChangedEvent:viewController body:body];
     
     [[[RCCManager sharedInstance] getBridge].eventDispatcher sendAppEventWithName:@"bottomTabSelected" body:body];
     if ([viewController isKindOfClass:[UINavigationController class]]) {
@@ -47,7 +47,7 @@
     }
     
   } else {
-    [RCCTabBarController sendScreenTabPressedEvent:viewController body:nil];
+    [[self class] sendScreenTabPressedEvent:viewController body:nil];
   }
   
   
@@ -380,11 +380,11 @@
 }
 
 +(void)sendScreenTabChangedEvent:(UIViewController*)viewController body:(NSDictionary*)body{
-  [RCCTabBarController sendTabEvent:@"bottomTabSelected" controller:viewController body:body];
+  [[self class] sendTabEvent:@"bottomTabSelected" controller:viewController body:body];
 }
 
 +(void)sendScreenTabPressedEvent:(UIViewController*)viewController body:(NSDictionary*)body{
-  [RCCTabBarController sendTabEvent:@"bottomTabReselected" controller:viewController body:body];
+  [[self class] sendTabEvent:@"bottomTabReselected" controller:viewController body:body];
 }
 
 +(void)sendTabEvent:(NSString *)event controller:(UIViewController*)viewController body:(NSDictionary*)body{
@@ -415,7 +415,7 @@
   if ([viewController isKindOfClass:[UINavigationController class]]) {
     UINavigationController *navigationController = (UINavigationController*)viewController;
     UIViewController *topViewController = [navigationController topViewController];
-    [RCCTabBarController sendTabEvent:event controller:topViewController body:body];
+    [[self class] sendTabEvent:event controller:topViewController body:body];
   }
 }
 

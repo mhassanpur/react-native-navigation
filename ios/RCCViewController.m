@@ -1,6 +1,7 @@
 #import "RCCViewController.h"
 #import "RCCNavigationController.h"
 #import "RCCTabBarController.h"
+#import "OGTabBarController.h"
 #import "RCCDrawerController.h"
 #import "RCCTheSideBarManagerViewController.h"
 #import <React/RCTRootView.h>
@@ -72,7 +73,7 @@ const NSInteger TRANSPARENT_NAVBAR_TAG = 78264803;
   // tab bar controller
   if ([type isEqualToString:@"TabBarControllerIOS"])
   {
-    controller = [[RCCTabBarController alloc] initWithProps:props children:children globalProps:globalProps bridge:bridge];
+    controller = [[OGTabBarController alloc] initWithProps:props children:children globalProps:globalProps bridge:bridge];
   }
   
   // side menu controller
