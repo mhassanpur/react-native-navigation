@@ -436,7 +436,7 @@
   
   // adjust the custom view
   if (self.customTabBarView != nil) {
-    self.tabBar.isHidden = YES;
+    [self.tabBar setHidden:YES];
     self.customTabBarView.frame = self.tabBar.frame;
   }
 }
