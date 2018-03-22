@@ -73,7 +73,7 @@ const NSInteger TRANSPARENT_NAVBAR_TAG = 78264803;
   // tab bar controller
   if ([type isEqualToString:@"TabBarControllerIOS"])
   {
-    controller = [[OGTabBarController alloc] initWithProps:props children:children globalProps:globalProps bridge:bridge];
+    controller = [[RCCTabBarController alloc] initWithProps:props children:children globalProps:globalProps bridge:bridge];
   }
   
   // side menu controller

@@ -434,8 +434,8 @@
 - (void)viewDidLayoutSubviews {
   [super viewDidLayoutSubviews];
   // adjust the custom view
-  if (self.customView != nil) {
-    self.customView.frame = self.tabBar.frame;
+  if (self.customTabBarView != nil) {
+    self.customTabBarView.frame = self.tabBar.frame;
   }
 }
 
