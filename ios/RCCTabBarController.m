@@ -228,6 +228,18 @@
   
   [self setRotation:props];
   
+  // Add a custom view over the tab bar
+  NSString *tabBarCustomView = tabsStyle[@"tabBarCustomView"];
+  if (tabBarCustomView != nil) {
+    if ([self.view isKindOfClass:[RCTRootView class]]) {
+      RCTBridge *bridge = ((RCTRootView*)self.view).bridge;
+      NSDictionary *initialProps = tabsStyle[@"tabBarCustomViewInitialProps"];
+      RCTRootView *reactView = [[RCTRootView alloc] initWithBridge:bridge moduleName:tabBarCustomView initialProperties:initialProps];
+      self.customTabBarView = reactView;
+      [self.view addSubview:self.customTabBarView];
+    }
+  }
+  
   return self;
 }
 
@@ -419,6 +431,13 @@
   }
 }
 
+- (void)viewDidLayoutSubviews {
+  [super viewDidLayoutSubviews];
+  // adjust the custom view
+  if (self.customView != nil) {
+    self.customView.frame = self.tabBar.frame;
+  }
+}
 
 
 @end

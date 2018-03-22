@@ -28,6 +28,12 @@ if (Platform.OS === 'android') {
   });
 }
 
+const CustomTabBar = ({text}) =>
+  <View style={{ backgroundColor: 'red' }}>
+    <Text style={{ color: 'white' }}>Hello!</Text>
+  </View>;
+Navigation.registerComponent('CustomTabBar', () => CustomTabBar);
+
 // this will start our app
 Navigation.startTabBasedApp({
   tabs,
@@ -37,6 +43,7 @@ Navigation.startTabBasedApp({
     tabBarButtonColor: '#ffffff',
     tabBarSelectedButtonColor: '#ff505c',
     tabFontFamily: 'BioRhyme-Bold',
+    tabBarCustomView: 'CustomTabBar'
   },
   appStyle: {
     tabBarBackgroundColor: '#003a66',
