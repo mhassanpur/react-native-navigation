@@ -431,8 +431,9 @@
   }
 }
 
-- (void)viewDidLayoutSubviews {
-  [super viewDidLayoutSubviews];
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  
   // adjust the custom view
   if (self.customTabBarView != nil) {
     self.tabBar.isHidden = YES;
