@@ -431,8 +431,8 @@
   }
 }
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
   
   // adjust the custom view
   if (self.customTabBarView != nil) {
