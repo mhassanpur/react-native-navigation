@@ -236,6 +236,7 @@
       NSDictionary *initialProps = tabsStyle[@"tabBarCustomViewInitialProps"];
       RCTRootView *reactView = [[RCTRootView alloc] initWithBridge:bridge moduleName:tabBarCustomView initialProperties:initialProps];
       self.customTabBarView = reactView;
+      self.customTabBarView.layer.zPosition = 100;
       [self.view addSubview:self.customTabBarView];
     }
   }
