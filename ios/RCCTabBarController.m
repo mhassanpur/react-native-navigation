@@ -119,13 +119,13 @@
       UIColor *color = tabBarBackgroundColor != (id)[NSNull null] ? [RCTConvert UIColor:tabBarBackgroundColor] : nil;
       self.tabBar.barTintColor = color;
     }
-
+    
     NSString *tabBarTranslucent = tabsStyle[@"tabBarTranslucent"];
     if (tabBarTranslucent)
     {
       self.tabBar.translucent = [tabBarTranslucent boolValue] ? YES : NO;
     }
-
+    
     NSString *tabBarHideShadow = tabsStyle[@"tabBarHideShadow"];
     if (tabBarHideShadow)
     {
@@ -218,7 +218,7 @@
   
   // replace the tabs
   self.viewControllers = viewControllers;
-
+  
   NSNumber *initialTab = tabsStyle[@"initialTabIndex"];
   if (initialTab)
   {
@@ -231,14 +231,11 @@
   // Add a custom view over the tab bar
   NSString *tabBarCustomView = tabsStyle[@"tabBarCustomView"];
   if (tabBarCustomView != nil) {
-    if ([self.view isKindOfClass:[RCTRootView class]]) {
-      RCTBridge *bridge = ((RCTRootView*)self.view).bridge;
-      NSDictionary *initialProps = tabsStyle[@"tabBarCustomViewInitialProps"];
-      RCTRootView *reactView = [[RCTRootView alloc] initWithBridge:bridge moduleName:tabBarCustomView initialProperties:initialProps];
-      self.customTabBarView = reactView;
-      self.customTabBarView.layer.zPosition = 100;
-      [self.view addSubview:self.customTabBarView];
-    }
+    NSDictionary *initialProps = tabsStyle[@"tabBarCustomViewInitialProps"];
+    RCTRootView *reactView = [[RCTRootView alloc] initWithBridge:bridge moduleName:tabBarCustomView initialProperties:initialProps];
+    self.customTabBarView = reactView;
+    self.customTabBarView.layer.zPosition = 100;
+    [self.view addSubview:self.customTabBarView];
   }
   
   return self;
@@ -375,7 +372,7 @@
                         options: (hidden ? UIViewAnimationOptionCurveEaseIn : UIViewAnimationOptionCurveEaseOut)
                      animations:^()
      {
-         [self.tabBar setFrame:nextFrame];
+       [self.tabBar setFrame:nextFrame];
      }
                      completion:^(BOOL finished)
      {
@@ -444,3 +441,4 @@
 
 
 @end
+
