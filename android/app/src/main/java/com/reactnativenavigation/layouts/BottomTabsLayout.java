@@ -161,12 +161,11 @@ public class BottomTabsLayout extends BaseLayout implements AHBottomNavigation.O
     private void addCustomView() {
         // custom tab bar
         final float scale = getContext().getResources().getDisplayMetrics().density;
-        int height = (int) (56 * scale + 0.5f);
+        int height = (int) (60 * scale + 0.5f);
         Context context = getContext();
         customView = new ContentView(context, "OGTabBarView", NavigationParams.EMPTY);
         LayoutParams lp = new LayoutParams(MATCH_PARENT, height);
         lp.addRule(ALIGN_PARENT_BOTTOM);
-        //customView.setBackgroundColor(Color.argb(128, 255, 0, 0));
         getScreenStackParent().addView(customView, lp);
         customView.setClipChildren(false);
         customView.setClipToPadding(false);
