@@ -135,10 +135,15 @@ public class BottomTabsLayout extends BaseLayout implements AHBottomNavigation.O
     }
 
     private void addBottomTabs() {
-        LayoutParams lp = new LayoutParams(MATCH_PARENT, WRAP_CONTENT);
-        lp.addRule(ALIGN_PARENT_BOTTOM);
-        getScreenStackParent().addView(bottomTabs, lp);
-        addCustomView();
+        boolean useCustomView = true;
+        if (useCustomView) {
+            addCustomView();
+        }
+        else {
+            LayoutParams lp = new LayoutParams(MATCH_PARENT, WRAP_CONTENT);
+            lp.addRule(ALIGN_PARENT_BOTTOM);
+            getScreenStackParent().addView(bottomTabs, lp);
+        }
     }
 
     private void addCustomView() {
