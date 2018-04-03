@@ -147,15 +147,14 @@ public class BottomTabsLayout extends BaseLayout implements AHBottomNavigation.O
     }
 
     private void addBottomTabs() {
-        LayoutParams lp = new LayoutParams(MATCH_PARENT, WRAP_CONTENT);
-        lp.addRule(ALIGN_PARENT_BOTTOM);
-        getScreenStackParent().addView(bottomTabs, lp);
         boolean useCustomView = true;
         if (useCustomView) {
             addCustomView();
         }
         else {
-
+            LayoutParams lp = new LayoutParams(MATCH_PARENT, WRAP_CONTENT);
+            lp.addRule(ALIGN_PARENT_BOTTOM);
+            getScreenStackParent().addView(bottomTabs, lp);
         }
     }
 
@@ -163,10 +162,10 @@ public class BottomTabsLayout extends BaseLayout implements AHBottomNavigation.O
         // custom tab bar
         Context context = getContext();
         customView = new ContentView(context, "OGTabBarView", NavigationParams.EMPTY);
-        LayoutParams lp = new LayoutParams(MATCH_PARENT, WRAP_CONTENT);
+        LayoutParams lp = new LayoutParams(MATCH_PARENT, 56);
         lp.addRule(ALIGN_PARENT_BOTTOM);
         //customView.setBackgroundColor(Color.argb(128, 255, 0, 0));
-        bottomTabs.addView(customView, lp);
+        getScreenStackParent().addView(customView, lp);
         customView.bringToFront();
     }
 
