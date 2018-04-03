@@ -1,6 +1,8 @@
 package com.reactnativenavigation.layouts;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
@@ -54,6 +57,7 @@ public class BottomTabsLayout extends BaseLayout implements AHBottomNavigation.O
     private ActivityParams params;
     private SnackbarAndFabContainer snackbarAndFabContainer;
     private BottomTabs bottomTabs;
+    private View customView;
     private ScreenStack[] screenStacks;
     private final SideMenuParams leftSideMenuParams;
     private final SideMenuParams rightSideMenuParams;
@@ -134,6 +138,17 @@ public class BottomTabsLayout extends BaseLayout implements AHBottomNavigation.O
         LayoutParams lp = new LayoutParams(MATCH_PARENT, WRAP_CONTENT);
         lp.addRule(ALIGN_PARENT_BOTTOM);
         getScreenStackParent().addView(bottomTabs, lp);
+        addCustomView();
+    }
+
+    private void addCustomView() {
+        // custom tab bar
+        Context context = getContext();
+        customView = new View(context);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        customView.setLayoutParams(lp);
+        customView.setBackgroundColor(Color.RED);
+        addView(customView);
     }
 
     private void createSnackbarContainer() {
