@@ -145,10 +145,10 @@ public class BottomTabsLayout extends BaseLayout implements AHBottomNavigation.O
         // custom tab bar
         Context context = getContext();
         customView = new View(context);
-        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-        customView.setLayoutParams(lp);
+        LayoutParams lp = new LayoutParams(MATCH_PARENT, WRAP_CONTENT);
+        lp.addRule(ALIGN_PARENT_BOTTOM);
         customView.setBackgroundColor(Color.RED);
-        addView(customView);
+        addView(customView, lp);
     }
 
     private void createSnackbarContainer() {
