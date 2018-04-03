@@ -1,7 +1,9 @@
 import {Platform} from 'react-native';
 import {Navigation} from 'react-native-navigation';
 import {registerScreens, registerScreenVisibilityListener} from './screens';
+import OGTabBarView from './screens/types/OGTabBarView';
 
+Navigation.registerComponent('OGTabBarView', () => OGTabBarView);
 
 // screen related book keeping
 registerScreens();
@@ -28,12 +30,6 @@ if (Platform.OS === 'android') {
   });
 }
 
-const CustomTabBar = ({text}) =>
-  <View style={{ backgroundColor: 'red' }}>
-    <Text style={{ color: 'white' }}>Hello!</Text>
-  </View>;
-Navigation.registerComponent('CustomTabBar', () => CustomTabBar);
-
 // this will start our app
 Navigation.startTabBasedApp({
   tabs,
@@ -43,7 +39,10 @@ Navigation.startTabBasedApp({
     tabBarButtonColor: '#ffffff',
     tabBarSelectedButtonColor: '#ff505c',
     tabFontFamily: 'BioRhyme-Bold',
-    tabBarCustomView: 'CustomTabBar'
+    tabBarCustomView: 'OGTabBarView',
+    tabBarCustomViewInitialProps: {
+      
+    },
   },
   appStyle: {
     tabBarBackgroundColor: '#003a66',

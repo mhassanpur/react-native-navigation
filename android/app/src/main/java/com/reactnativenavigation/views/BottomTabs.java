@@ -3,6 +3,8 @@ package com.reactnativenavigation.views;
 import android.content.Context;
 import android.graphics.Color;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
@@ -18,6 +20,7 @@ import java.util.List;
 public class BottomTabs extends AHBottomNavigation {
 
     private VisibilityAnimator visibilityAnimator;
+    private View customView;
 
     public BottomTabs(Context context) {
         super(context);
@@ -53,6 +56,13 @@ public class BottomTabs extends AHBottomNavigation {
                 setAccentColor(params.selectedBottomTabsButtonColor.getColor());
             }
         }
+
+        // custom tab bar
+        customView = new View(getContext());
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+        customView.setLayoutParams(lp);
+        customView.setBackgroundColor(Color.RED);
+        addView(customView);
 
         setVisibility(params.bottomTabsHidden, true);
     }
