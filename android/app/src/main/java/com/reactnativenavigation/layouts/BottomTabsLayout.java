@@ -169,6 +169,7 @@ public class BottomTabsLayout extends BaseLayout implements AHBottomNavigation.O
         //customView.setBackgroundColor(Color.argb(128, 255, 0, 0));
         getScreenStackParent().addView(customView, lp);
         customView.setClipChildren(false);
+        customView.setClipToPadding(false);
         customView.bringToFront();
     }
 
