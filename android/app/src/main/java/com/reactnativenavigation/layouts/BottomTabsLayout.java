@@ -126,7 +126,7 @@ public class BottomTabsLayout extends BaseLayout implements AHBottomNavigation.O
     private LayoutParams createScreenLayoutParams(ScreenParams params) {
         LayoutParams lp = new LayoutParams(MATCH_PARENT, MATCH_PARENT);
         if (params.styleParams.drawScreenAboveBottomTabs) {
-            lp.addRule(RelativeLayout.ABOVE, bottomTabs.getId());
+            lp.addRule(RelativeLayout.ABOVE, getBottomTabsViewId());
         }
         return lp;
     }
@@ -134,6 +134,16 @@ public class BottomTabsLayout extends BaseLayout implements AHBottomNavigation.O
     private void createBottomTabs() {
         bottomTabs = new BottomTabs(getContext());
         bottomTabs.addTabs(params.tabParams, this);
+    }
+
+    private int getBottomTabsViewId() {
+        boolean useCustomView = true;
+        if (useCustomView) {
+            return customView.getId();
+        }
+        else {
+            return bottomTabs.getId();
+        }
     }
 
     private void addBottomTabs() {
