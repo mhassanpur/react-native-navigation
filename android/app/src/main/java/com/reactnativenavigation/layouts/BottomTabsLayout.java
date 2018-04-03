@@ -26,6 +26,7 @@ import com.reactnativenavigation.params.AppStyle;
 import com.reactnativenavigation.params.ContextualMenuParams;
 import com.reactnativenavigation.params.FabParams;
 import com.reactnativenavigation.params.LightBoxParams;
+import com.reactnativenavigation.params.NavigationParams;
 import com.reactnativenavigation.params.ScreenParams;
 import com.reactnativenavigation.params.SideMenuParams;
 import com.reactnativenavigation.params.SlidingOverlayParams;
@@ -150,7 +151,7 @@ public class BottomTabsLayout extends BaseLayout implements AHBottomNavigation.O
     private void addCustomView() {
         // custom tab bar
         Context context = getContext();
-        customView = new ContentView(context, "OGTabBarView", params.screenParams.navigationParams);
+        customView = new ContentView(context, "OGTabBarView", NavigationParams.EMPTY);
         LayoutParams lp = new LayoutParams(MATCH_PARENT, WRAP_CONTENT);
         lp.addRule(ALIGN_PARENT_BOTTOM);
         //customView.setBackgroundColor(Color.argb(128, 255, 0, 0));
