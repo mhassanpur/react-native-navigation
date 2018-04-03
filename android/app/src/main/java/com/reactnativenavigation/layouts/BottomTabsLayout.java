@@ -148,7 +148,7 @@ public class BottomTabsLayout extends BaseLayout implements AHBottomNavigation.O
         LayoutParams lp = new LayoutParams(MATCH_PARENT, WRAP_CONTENT);
         lp.addRule(ALIGN_PARENT_BOTTOM);
         customView.setBackgroundColor(Color.RED);
-        addView(customView, lp);
+        getScreenStackParent().addView(customView, lp);
     }
 
     private void createSnackbarContainer() {

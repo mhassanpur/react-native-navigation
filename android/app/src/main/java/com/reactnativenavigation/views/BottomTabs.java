@@ -20,7 +20,6 @@ import java.util.List;
 public class BottomTabs extends AHBottomNavigation {
 
     private VisibilityAnimator visibilityAnimator;
-    private View customView;
 
     public BottomTabs(Context context) {
         super(context);
@@ -30,7 +29,6 @@ public class BottomTabs extends AHBottomNavigation {
         setStyle();
         setFontFamily();
         setFontSize();
-        setUpCustomView(context);
     }
 
     public void addTabs(List<ScreenParams> params, OnTabSelectedListener onTabSelectedListener) {
@@ -79,15 +77,6 @@ public class BottomTabs extends AHBottomNavigation {
                 this.refresh();
             }
         }
-    }
-
-    private void setUpCustomView(Context context) {
-        // custom tab bar
-        customView = new View(context);
-        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-        customView.setLayoutParams(lp);
-        customView.setBackgroundColor(Color.RED);
-        addView(customView);
     }
 
     private void setTitlesDisplayState() {
