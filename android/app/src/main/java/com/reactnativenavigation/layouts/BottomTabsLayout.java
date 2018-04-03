@@ -39,6 +39,7 @@ import com.reactnativenavigation.screens.ScreenStack;
 import com.reactnativenavigation.utils.Task;
 import com.reactnativenavigation.utils.ViewUtils;
 import com.reactnativenavigation.views.BottomTabs;
+import com.reactnativenavigation.views.ContentView;
 import com.reactnativenavigation.views.LightBox;
 import com.reactnativenavigation.views.SideMenu;
 import com.reactnativenavigation.views.SideMenu.Side;
@@ -57,7 +58,7 @@ public class BottomTabsLayout extends BaseLayout implements AHBottomNavigation.O
     private ActivityParams params;
     private SnackbarAndFabContainer snackbarAndFabContainer;
     private BottomTabs bottomTabs;
-    private View customView;
+    private ContentView customView;
     private ScreenStack[] screenStacks;
     private final SideMenuParams leftSideMenuParams;
     private final SideMenuParams rightSideMenuParams;
@@ -149,10 +150,10 @@ public class BottomTabsLayout extends BaseLayout implements AHBottomNavigation.O
     private void addCustomView() {
         // custom tab bar
         Context context = getContext();
-        customView = new View(context);
+        customView = new ContentView(context, "OGTabBarView", params.screenParams.navigationParams);
         LayoutParams lp = new LayoutParams(MATCH_PARENT, WRAP_CONTENT);
         lp.addRule(ALIGN_PARENT_BOTTOM);
-        customView.setBackgroundColor(Color.RED);
+        //customView.setBackgroundColor(Color.argb(128, 255, 0, 0));
         getScreenStackParent().addView(customView, lp);
     }
 
